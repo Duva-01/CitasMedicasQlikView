@@ -1,0 +1,266 @@
+﻿20241105T092054.175+0100      Ejecución iniciada.
+20241105T092054.175+0100      QlikView Desktop Version      12.90.20000+2024-05-15 11:28:19+80c6079
+20241105T092054.175+0100      CPU Target                    x64
+20241105T092054.234+0100      Operating System              Microsoft Windows 11 Home (64 bit edition)
+20241105T092054.235+0100      Wow64 mode                    Not using Wow64
+20241105T092054.235+0100      Language                      0c0a español Spanish
+20241105T092054.235+0100      Country                       ESP España Spain
+20241105T092054.236+0100      MDAC Version                  6.3.9600.16384
+20241105T092054.236+0100      MDAC Full Install Version     6.3.9600.16384
+20241105T092054.236+0100      PreferredCompression          2
+20241105T092054.236+0100      EnableParallelReload          1
+20241105T092054.236+0100      AutoSaveAfterReload           0
+20241105T092054.236+0100      BackupBeforeReload            1
+20241105T092054.236+0100      EnableFlushLog                0
+20241105T092054.236+0100      UserLogfileCharset            65001
+20241105T092054.236+0100      OdbcLoginTimeout              -1
+20241105T092054.236+0100      OdbcConnectionTimeout         -1
+20241105T092054.236+0100      ConnectorSettingsFile         
+20241105T092054.236+0100      LongestPossibleLine           1048576
+20241105T092054.236+0100      MaxCoreMask                   -1
+20241105T092054.236+0100      WebFileTimeout                0
+20241105T092054.236+0100      WebFileUserAgent              Mozilla/5.0
+20241105T092054.236+0100      DontUseInternetCache          1
+20241105T092054.236+0100      ReloadInstrTraceLevel         0
+20241105T092054.236+0100      ConcatCalcTermLen             2147483646
+20241105T092054.236+0100      ScriptWantsDbWrite            false
+20241105T092054.236+0100      ScriptWantsExe                false
+20241105T092054.236+0100      LogFile CodePage Used:        65001
+20241105T092054.236+0100      UseMemoryFillPattern          1
+20241105T092054.236+0100      ScriptMode                    Legacy (gives greater system access) (aka qv11 mode)
+20241105T092054.236+0100      SequentialThreadCount         38
+20241105T092054.236+0100      NumberOfCores (effective)     12
+20241105T092054.236+0100      ReloadCodebase                Bnf
+20241105T092054.236+0100      Reload ID                     
+20241105T092054.236+0100      Reload Executed By            LAPTOP-H62PMCCC\Usuario
+20241105T092054.236+0100      Process Executing             QlikView Desktop
+20241105T092054.236+0100      Process ID                    19572
+20241105T092054.236+0100      Grpc version                  30.0.0
+20241105T092054.236+0100      Protobuf version              3.15.6
+20241105T092054.236+0100      Effective strict level        0
+20241105T092054.379+0100 0007 Section Access
+20241105T092054.379+0100 0003 LOAD * INLINE [
+20241105T092054.379+0100 0004     ACCESS, USERID, PASSWORD, NOMBRE
+20241105T092054.379+0100 0005     ADMIN, ADMIN_USER, admin_password, Admin
+20241105T092054.379+0100 0006     USER, NORMAL_USER, user_password, Normal
+20241105T092054.379+0100 0007 ]
+20241105T092054.379+0100      	4 campos encontrados: ACCESS, USERID, PASSWORD, NOMBRE, 
+20241105T092054.379+0100      2 registros leídos
+20241105T092054.379+0100 0009 Section Application
+20241105T092054.380+0100 0010 SET ThousandSep='.'
+20241105T092054.380+0100 0002 SET DecimalSep=','
+20241105T092054.380+0100 0003 SET MoneyThousandSep='.'
+20241105T092054.380+0100 0004 SET MoneyDecimalSep=','
+20241105T092054.381+0100 0006 SET MoneyFormat='#.##0,00 â‚¬;-#.##0,00 â‚¬'
+20241105T092054.381+0100 0007 SET TimeFormat='h:mm:ss'
+20241105T092054.381+0100 0008 SET DateFormat='D/M/YYYY'
+20241105T092054.381+0100 0009 SET TimestampFormat='D/M/YYYY h:mm:ss[.fff]'
+20241105T092054.381+0100 0010 SET FirstWeekDay=0
+20241105T092054.381+0100 0011 SET BrokenWeeks=0
+20241105T092054.381+0100 0012 SET ReferenceDay=4
+20241105T092054.381+0100 0013 SET FirstMonthOfYear=1
+20241105T092054.381+0100 0015 SET CollationLocale='es-ES'
+20241105T092054.381+0100 0016 SET MonthNames='ene.;feb.;mar.;abr.;may.;jun.;jul.;ago.;sept.;oct.;nov.;dic.'
+20241105T092054.381+0100 0017 SET LongMonthNames='enero;febrero;marzo;abril;mayo;junio;julio;agosto;septiembre;octubre;noviembre;diciembre'
+20241105T092054.381+0100 0018 SET DayNames='lun.;mar.;miÃ©.;jue.;vie.;sÃ¡b.;dom.'
+20241105T092054.381+0100 0019 SET LongDayNames='lunes;martes;miÃ©rcoles;jueves;viernes;sÃ¡bado;domingo'
+20241105T092054.381+0100 0021 LET vQVDPath = 'D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Data\'
+20241105T092054.381+0100 0022 LET vLogPath = 'D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_' & Date(Today(), 'YYYYMMDD') & '.txt'
+20241105T092054.382+0100 0024 SUB WriteLog(pText)
+20241105T092054.382+0100 0029 CALL WriteLog('Inicio de la carga de datos - ' & Timestamp(Now(), 'DD/MM/YYYY hh:mm:ss'))
+  20241105T092054.382+0100 0025 TRACE Inicio de la carga de datos - 05/11/2024 09:20:54
+  20241105T092054.382+0100 0025 Inicio de la carga de datos - 05/11/2024 09:20:54
+  20241105T092054.382+0100 0026 
+  20241105T092054.382+0100 0026 EXECUTE cmd /c echo Inicio de la carga de datos - 05/11/2024 09:20:54 >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+  20241105T092054.382+0100      The EXECUTE statement requires the Execute flag to be set for the script
+  20241105T092057.318+0100 0027 END SUB
+20241105T092057.318+0100 0031 CALL WriteLog('Verificando existencia de archivos QVD y comenzando la carga de cada tabla.')
+  20241105T092057.318+0100 0025 TRACE Verificando existencia de archivos QVD y comenzando la carga de cada tabla.
+  20241105T092057.318+0100 0025 Verificando existencia de archivos QVD y comenzando la carga de cada tabla.
+  20241105T092057.318+0100 0026 
+  20241105T092057.319+0100 0026 EXECUTE cmd /c echo Verificando existencia de archivos QVD y comenzando la carga de cada tabla. >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+  20241105T092057.319+0100      The EXECUTE statement requires the Execute flag to be set for the script
+  20241105T092058.577+0100 0027 END SUB
+20241105T092058.577+0100 0034 CALL WriteLog('Iniciando carga de la tabla Usuario')
+  20241105T092058.577+0100 0025 TRACE Iniciando carga de la tabla Usuario
+  20241105T092058.577+0100 0025 Iniciando carga de la tabla Usuario
+  20241105T092058.577+0100 0026 
+  20241105T092058.577+0100 0026 EXECUTE cmd /c echo Iniciando carga de la tabla Usuario >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+  20241105T092058.577+0100      The EXECUTE statement requires the Execute flag to be set for the script
+  20241105T092059.827+0100 0027 END SUB
+20241105T092059.827+0100 0035 IF NOT FileSize(vQVDPath & 'Usuario.qvd') THEN
+  20241105T092059.828+0100 0051 Usuario:
+  20241105T092059.828+0100 0052     LOAD * FROM [D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Data\Usuario.qvd] (qvd)
+  20241105T092059.830+0100      	5 campos encontrados: usuario_id, nombre, apellidos, usuario, clave, 
+  20241105T092059.832+0100      15 registros leídos
+  20241105T092059.833+0100 0053 CALL WriteLog('Tabla Usuario cargada desde Usuario.qvd')
+    20241105T092059.833+0100 0025 TRACE Tabla Usuario cargada desde Usuario.qvd
+    20241105T092059.833+0100 0025 Tabla Usuario cargada desde Usuario.qvd
+    20241105T092059.833+0100 0026 
+    20241105T092059.833+0100 0026 EXECUTE cmd /c echo Tabla Usuario cargada desde Usuario.qvd >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+    20241105T092059.833+0100      The EXECUTE statement requires the Execute flag to be set for the script
+    20241105T092100.644+0100 0027 END SUB
+  20241105T092100.644+0100 0054 ENDIF
+20241105T092100.644+0100 0056 IF ScriptError = 0 THEN
+  20241105T092100.644+0100 0057 CALL WriteLog('Carga de la tabla Usuario fue exitosa')
+    20241105T092100.645+0100 0025 TRACE Carga de la tabla Usuario fue exitosa
+    20241105T092100.645+0100 0025 Carga de la tabla Usuario fue exitosa
+    20241105T092100.645+0100 0026 
+    20241105T092100.645+0100 0026 EXECUTE cmd /c echo Carga de la tabla Usuario fue exitosa >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+    20241105T092100.645+0100      The EXECUTE statement requires the Execute flag to be set for the script
+    20241105T092101.627+0100 0027 END SUB
+20241105T092101.627+0100 0058 ELSE
+20241105T092101.627+0100 0063 CALL WriteLog('Iniciando carga de la tabla Paciente')
+  20241105T092101.627+0100 0025 TRACE Iniciando carga de la tabla Paciente
+  20241105T092101.627+0100 0025 Iniciando carga de la tabla Paciente
+  20241105T092101.627+0100 0026 
+  20241105T092101.627+0100 0026 EXECUTE cmd /c echo Iniciando carga de la tabla Paciente >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+  20241105T092101.627+0100      The EXECUTE statement requires the Execute flag to be set for the script
+  20241105T092102.445+0100 0027 END SUB
+20241105T092102.445+0100 0064 IF NOT FileSize(vQVDPath & 'Paciente.qvd') THEN
+  20241105T092102.446+0100 0095 Paciente:
+  20241105T092102.446+0100 0096     LOAD * FROM [D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Data\Paciente.qvd] (qvd)
+  20241105T092102.447+0100      	9 campos encontrados: paciente_id, nombre_paciente, apellidos_paciente, usuario_paciente, clave_paciente, NSS, num_tarjeta, telefono, direccion, 
+  20241105T092102.449+0100      8 registros leídos
+  20241105T092102.449+0100 0097 CALL WriteLog('Tabla Paciente cargada desde Paciente.qvd')
+    20241105T092102.450+0100 0025 TRACE Tabla Paciente cargada desde Paciente.qvd
+    20241105T092102.450+0100 0025 Tabla Paciente cargada desde Paciente.qvd
+    20241105T092102.450+0100 0026 
+    20241105T092102.450+0100 0026 EXECUTE cmd /c echo Tabla Paciente cargada desde Paciente.qvd >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+    20241105T092102.450+0100      The EXECUTE statement requires the Execute flag to be set for the script
+    20241105T092103.583+0100 0027 END SUB
+  20241105T092103.583+0100 0098 ENDIF
+20241105T092103.583+0100 0100 IF ScriptError = 0 THEN
+  20241105T092103.583+0100 0101 CALL WriteLog('Carga de la tabla Paciente fue exitosa')
+    20241105T092103.583+0100 0025 TRACE Carga de la tabla Paciente fue exitosa
+    20241105T092103.583+0100 0025 Carga de la tabla Paciente fue exitosa
+    20241105T092103.583+0100 0026 
+    20241105T092103.583+0100 0026 EXECUTE cmd /c echo Carga de la tabla Paciente fue exitosa >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+    20241105T092103.583+0100      The EXECUTE statement requires the Execute flag to be set for the script
+    20241105T092104.836+0100 0027 END SUB
+20241105T092104.836+0100 0102 ELSE
+20241105T092104.836+0100 0107 CALL WriteLog('Iniciando carga de la tabla Medico')
+  20241105T092104.837+0100 0025 TRACE Iniciando carga de la tabla Medico
+  20241105T092104.837+0100 0025 Iniciando carga de la tabla Medico
+  20241105T092104.837+0100 0026 
+  20241105T092104.837+0100 0026 EXECUTE cmd /c echo Iniciando carga de la tabla Medico >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+  20241105T092104.837+0100      The EXECUTE statement requires the Execute flag to be set for the script
+  20241105T092105.686+0100 0027 END SUB
+20241105T092105.686+0100 0108 IF NOT FileSize(vQVDPath & 'Medico.qvd') THEN
+  20241105T092105.687+0100 0133 Medico:
+  20241105T092105.687+0100 0134     LOAD * FROM [D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Data\Medico.qvd] (qvd)
+  20241105T092105.688+0100      	6 campos encontrados: medico_id, nombre_medico, apellidos_medico, usuario_medico, clave_medico, num_colegiado, 
+  20241105T092105.690+0100      7 registros leídos
+  20241105T092105.690+0100 0135 CALL WriteLog('Tabla Medico cargada desde Medico.qvd')
+    20241105T092105.691+0100 0025 TRACE Tabla Medico cargada desde Medico.qvd
+    20241105T092105.691+0100 0025 Tabla Medico cargada desde Medico.qvd
+    20241105T092105.691+0100 0026 
+    20241105T092105.691+0100 0026 EXECUTE cmd /c echo Tabla Medico cargada desde Medico.qvd >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+    20241105T092105.691+0100      The EXECUTE statement requires the Execute flag to be set for the script
+    20241105T092106.630+0100 0027 END SUB
+  20241105T092106.630+0100 0136 ENDIF
+20241105T092106.630+0100 0138 IF ScriptError = 0 THEN
+  20241105T092106.630+0100 0139 CALL WriteLog('Carga de la tabla Medico fue exitosa')
+    20241105T092106.630+0100 0025 TRACE Carga de la tabla Medico fue exitosa
+    20241105T092106.630+0100 0025 Carga de la tabla Medico fue exitosa
+    20241105T092106.630+0100 0026 
+    20241105T092106.631+0100 0026 EXECUTE cmd /c echo Carga de la tabla Medico fue exitosa >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+    20241105T092106.631+0100      The EXECUTE statement requires the Execute flag to be set for the script
+    20241105T092107.499+0100 0027 END SUB
+20241105T092107.499+0100 0140 ELSE
+20241105T092107.499+0100 0145 CALL WriteLog('Iniciando carga de la tabla Medico_Paciente')
+  20241105T092107.499+0100 0025 TRACE Iniciando carga de la tabla Medico_Paciente
+  20241105T092107.499+0100 0025 Iniciando carga de la tabla Medico_Paciente
+  20241105T092107.499+0100 0026 
+  20241105T092107.499+0100 0026 EXECUTE cmd /c echo Iniciando carga de la tabla Medico_Paciente >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+  20241105T092107.499+0100      The EXECUTE statement requires the Execute flag to be set for the script
+  20241105T092108.585+0100 0027 END SUB
+20241105T092108.585+0100 0146 IF NOT FileSize(vQVDPath & 'Medico_Paciente.qvd') THEN
+  20241105T092108.586+0100 0160 Medico_Paciente:
+  20241105T092108.586+0100 0161     LOAD * FROM [D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Data\Medico_Paciente.qvd] (qvd)
+  20241105T092108.587+0100      	3 campos encontrados: medico_paciente_id, medico_id, paciente_id, 
+  20241105T092108.589+0100      7 registros leídos
+  20241105T092108.589+0100 0162 CALL WriteLog('Tabla Medico_Paciente cargada desde Medico_Paciente.qvd')
+    20241105T092108.590+0100 0025 TRACE Tabla Medico_Paciente cargada desde Medico_Paciente.qvd
+    20241105T092108.590+0100 0025 Tabla Medico_Paciente cargada desde Medico_Paciente.qvd
+    20241105T092108.590+0100 0026 
+    20241105T092108.590+0100 0026 EXECUTE cmd /c echo Tabla Medico_Paciente cargada desde Medico_Paciente.qvd >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+    20241105T092108.590+0100      The EXECUTE statement requires the Execute flag to be set for the script
+    20241105T092109.841+0100 0027 END SUB
+  20241105T092109.841+0100 0163 ENDIF
+20241105T092109.842+0100 0165 IF ScriptError = 0 THEN
+  20241105T092109.842+0100 0166 CALL WriteLog('Carga de la tabla Medico_Paciente fue exitosa')
+    20241105T092109.842+0100 0025 TRACE Carga de la tabla Medico_Paciente fue exitosa
+    20241105T092109.842+0100 0025 Carga de la tabla Medico_Paciente fue exitosa
+    20241105T092109.842+0100 0026 
+    20241105T092109.842+0100 0026 EXECUTE cmd /c echo Carga de la tabla Medico_Paciente fue exitosa >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+    20241105T092109.842+0100      The EXECUTE statement requires the Execute flag to be set for the script
+    20241105T092111.088+0100 0027 END SUB
+20241105T092111.088+0100 0167 ELSE
+20241105T092111.088+0100 0172 CALL WriteLog('Iniciando carga de la tabla Cita')
+  20241105T092111.088+0100 0025 TRACE Iniciando carga de la tabla Cita
+  20241105T092111.088+0100 0025 Iniciando carga de la tabla Cita
+  20241105T092111.088+0100 0026 
+  20241105T092111.088+0100 0026 EXECUTE cmd /c echo Iniciando carga de la tabla Cita >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+  20241105T092111.089+0100      The EXECUTE statement requires the Execute flag to be set for the script
+  20241105T092111.945+0100 0027 END SUB
+20241105T092111.946+0100 0173 IF NOT FileSize(vQVDPath & 'Cita.qvd') THEN
+  20241105T092111.946+0100 0191 Cita:
+  20241105T092111.946+0100 0192     LOAD * FROM [D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Data\Cita.qvd] (qvd)
+  20241105T092111.948+0100      	7 campos encontrados: cita_id, fecha_hora, motivo_cita, paciente_id, medico_id, Mes, Año, 
+  20241105T092111.950+0100      51 registros leídos
+  20241105T092111.950+0100 0193 CALL WriteLog('Tabla Cita cargada desde Cita.qvd')
+    20241105T092111.950+0100 0025 TRACE Tabla Cita cargada desde Cita.qvd
+    20241105T092111.950+0100 0025 Tabla Cita cargada desde Cita.qvd
+    20241105T092111.950+0100 0026 
+    20241105T092111.950+0100 0026 EXECUTE cmd /c echo Tabla Cita cargada desde Cita.qvd >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+    20241105T092111.950+0100      The EXECUTE statement requires the Execute flag to be set for the script
+    20241105T092112.873+0100 0027 END SUB
+  20241105T092112.873+0100 0194 ENDIF
+20241105T092112.873+0100 0196 IF ScriptError = 0 THEN
+  20241105T092112.873+0100 0197 CALL WriteLog('Carga de la tabla Cita fue exitosa')
+    20241105T092112.873+0100 0025 TRACE Carga de la tabla Cita fue exitosa
+    20241105T092112.873+0100 0025 Carga de la tabla Cita fue exitosa
+    20241105T092112.873+0100 0026 
+    20241105T092112.873+0100 0026 EXECUTE cmd /c echo Carga de la tabla Cita fue exitosa >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+    20241105T092112.873+0100      The EXECUTE statement requires the Execute flag to be set for the script
+    20241105T092113.793+0100 0027 END SUB
+20241105T092113.793+0100 0198 ELSE
+20241105T092113.793+0100 0203 CALL WriteLog('Iniciando carga de la tabla Diagnostico')
+  20241105T092113.794+0100 0025 TRACE Iniciando carga de la tabla Diagnostico
+  20241105T092113.794+0100 0025 Iniciando carga de la tabla Diagnostico
+  20241105T092113.794+0100 0026 
+  20241105T092113.794+0100 0026 EXECUTE cmd /c echo Iniciando carga de la tabla Diagnostico >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+  20241105T092113.794+0100      The EXECUTE statement requires the Execute flag to be set for the script
+  20241105T092114.877+0100 0027 END SUB
+20241105T092114.877+0100 0204 IF NOT FileSize(vQVDPath & 'Diagnostico.qvd') THEN
+  20241105T092114.878+0100 0219 Diagnostico:
+  20241105T092114.878+0100 0220     LOAD * FROM [D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Data\Diagnostico.qvd] (qvd)
+  20241105T092114.880+0100      	4 campos encontrados: diagnostico_id, valoracion_especialista, enfermedad, cita_id, 
+  20241105T092114.881+0100      50 registros leídos
+  20241105T092114.882+0100 0221 CALL WriteLog('Tabla Diagnostico cargada desde Diagnostico.qvd')
+    20241105T092114.882+0100 0025 TRACE Tabla Diagnostico cargada desde Diagnostico.qvd
+    20241105T092114.882+0100 0025 Tabla Diagnostico cargada desde Diagnostico.qvd
+    20241105T092114.882+0100 0026 
+    20241105T092114.882+0100 0026 EXECUTE cmd /c echo Tabla Diagnostico cargada desde Diagnostico.qvd >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+    20241105T092114.882+0100      The EXECUTE statement requires the Execute flag to be set for the script
+    20241105T092115.622+0100 0027 END SUB
+  20241105T092115.623+0100 0222 ENDIF
+20241105T092115.623+0100 0224 IF ScriptError = 0 THEN
+  20241105T092115.623+0100 0225 CALL WriteLog('Carga de la tabla Diagnostico fue exitosa')
+    20241105T092115.623+0100 0025 TRACE Carga de la tabla Diagnostico fue exitosa
+    20241105T092115.623+0100 0025 Carga de la tabla Diagnostico fue exitosa
+    20241105T092115.623+0100 0026 
+    20241105T092115.623+0100 0026 EXECUTE cmd /c echo Carga de la tabla Diagnostico fue exitosa >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+    20241105T092115.623+0100      The EXECUTE statement requires the Execute flag to be set for the script
+    20241105T092116.652+0100 0027 END SUB
+20241105T092116.652+0100 0226 ELSE
+20241105T092116.652+0100 0230 CALL WriteLog('Carga de datos completada exitosamente a las ' & Timestamp(Now(), 'DD/MM/YYYY hh:mm:ss'))
+  20241105T092116.652+0100 0025 TRACE Carga de datos completada exitosamente a las 05/11/2024 09:21:16
+  20241105T092116.652+0100 0025 Carga de datos completada exitosamente a las 05/11/2024 09:21:16
+  20241105T092116.652+0100 0026 
+  20241105T092116.652+0100 0026 EXECUTE cmd /c echo Carga de datos completada exitosamente a las 05/11/2024 09:21:16 >> "D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Reports\Logs\CargaLog_20241105.txt"
+  20241105T092116.652+0100      The EXECUTE statement requires the Execute flag to be set for the script
+  20241105T092117.712+0100 0027 END SUB
+  20241105T092117.713+0100      $Syn 1 = paciente_id+medico_id
+  20241105T092117.791+0100      Ejecución finalizada.

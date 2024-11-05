@@ -1,0 +1,9 @@
+Section Access;
+
+LOAD * INLINE [
+    ACCESS, USERID, PASSWORD, NOMBRE
+    ADMIN, ADMIN_USER, admin_password, Admin
+    USER, NORMAL_USER, user_password, Normal
+];
+
+Section Application;

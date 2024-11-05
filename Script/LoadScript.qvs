@@ -1,0 +1,144 @@
+SET ThousandSep='.';
+SET DecimalSep=',';
+SET MoneyThousandSep='.';
+SET MoneyDecimalSep=',';
+SET MoneyFormat='#.##0,00 €;-#.##0,00 €';
+SET TimeFormat='h:mm:ss';
+SET DateFormat='D/M/YYYY';
+SET TimestampFormat='D/M/YYYY h:mm:ss[.fff]';
+SET FirstWeekDay=0;
+SET BrokenWeeks=0;
+SET ReferenceDay=4;
+SET FirstMonthOfYear=1;
+SET CollationLocale='es-ES';
+SET MonthNames='ene.;feb.;mar.;abr.;may.;jun.;jul.;ago.;sept.;oct.;nov.;dic.';
+SET LongMonthNames='enero;febrero;marzo;abril;mayo;junio;julio;agosto;septiembre;octubre;noviembre;diciembre';
+SET DayNames='lun.;mar.;mié.;jue.;vie.;sáb.;dom.';
+SET LongDayNames='lunes;martes;miércoles;jueves;viernes;sábado;domingo';
+
+LET vQVDPath = 'D:\Usuario\Desktop\MetaEnlace\Proyectos\QlikView\CitasMedicasQlikView\Data\';
+
+// Cargar la tabla Usuario
+IF NOT FileSize(vQVDPath & 'Usuario.qvd') THEN
+    OLEDB CONNECT TO [Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CitasMedicas;Data Source=localhost\SQLEXPRESS01];
+    Usuario:
+    LOAD 
+        id AS usuario_id,
+        nombre,
+        apellidos,
+        usuario,
+        clave;
+    SQL SELECT id, nombre, apellidos, usuario, clave FROM CitasMedicas.dbo.Usuario;
+    STORE Usuario INTO [$(vQVDPath)Usuario.qvd] (qvd);
+ELSE
+    Usuario:
+    LOAD * FROM [$(vQVDPath)Usuario.qvd] (qvd);
+ENDIF;
+
+// Cargar la tabla Paciente con los campos de Usuario
+IF NOT FileSize(vQVDPath & 'Paciente.qvd') THEN
+    OLEDB CONNECT TO [Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CitasMedicas;Data Source=localhost\SQLEXPRESS01];
+    Paciente:
+    LOAD 
+        id AS paciente_id,
+        nombre AS nombre_paciente,
+        apellidos AS apellidos_paciente,
+        usuario AS usuario_paciente,
+        clave AS clave_paciente,
+        NSS,
+        num_tarjeta,
+        telefono,
+        direccion;
+    SQL SELECT
+        Usuario.id,
+        Usuario.nombre,
+        Usuario.apellidos,
+        Usuario.usuario,
+        Usuario.clave,
+        Paciente.NSS,
+        Paciente.num_tarjeta,
+        Paciente.telefono,
+        Paciente.direccion
+    FROM CitasMedicas.dbo.Usuario
+    JOIN CitasMedicas.dbo.Paciente ON Usuario.id = Paciente.id;
+    STORE Paciente INTO [$(vQVDPath)Paciente.qvd] (qvd);
+ELSE
+    Paciente:
+    LOAD * FROM [$(vQVDPath)Paciente.qvd] (qvd);
+ENDIF;
+
+// Cargar la tabla Medico con los campos de Usuario
+IF NOT FileSize(vQVDPath & 'Medico.qvd') THEN
+    OLEDB CONNECT TO [Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CitasMedicas;Data Source=localhost\SQLEXPRESS01];
+    Medico:
+    LOAD 
+        id AS medico_id,
+        nombre AS nombre_medico,
+        apellidos AS apellidos_medico,
+        usuario AS usuario_medico,
+        clave AS clave_medico,
+        num_colegiado;
+    SQL SELECT
+        Usuario.id,
+        Usuario.nombre,
+        Usuario.apellidos,
+        Usuario.usuario,
+        Usuario.clave,
+        Medico.num_colegiado
+    FROM CitasMedicas.dbo.Usuario
+    JOIN CitasMedicas.dbo.Medico ON Usuario.id = Medico.id;
+    STORE Medico INTO [$(vQVDPath)Medico.qvd] (qvd);
+ELSE
+    Medico:
+    LOAD * FROM [$(vQVDPath)Medico.qvd] (qvd);
+ENDIF;
+
+// Cargar la tabla Medico_Paciente
+IF NOT FileSize(vQVDPath & 'Medico_Paciente.qvd') THEN
+    OLEDB CONNECT TO [Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CitasMedicas;Data Source=localhost\SQLEXPRESS01];
+    Medico_Paciente:
+    LOAD 
+        id AS medico_paciente_id,
+        medico_id,
+        paciente_id;
+    SQL SELECT id, medico_id, paciente_id FROM CitasMedicas.dbo.Medico_Paciente;
+    STORE Medico_Paciente INTO [$(vQVDPath)Medico_Paciente.qvd] (qvd);
+ELSE
+    Medico_Paciente:
+    LOAD * FROM [$(vQVDPath)Medico_Paciente.qvd] (qvd);
+ENDIF;
+
+// Cargar la tabla Cita
+IF NOT FileSize(vQVDPath & 'Cita.qvd') THEN
+    OLEDB CONNECT TO [Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CitasMedicas;Data Source=localhost\SQLEXPRESS01];
+    Cita:
+    LOAD 
+        id AS cita_id,
+        fecha_hora,
+        motivo_cita,
+        paciente_id,
+        medico_id,
+        Month(fecha_hora) AS Mes,  
+        Year(fecha_hora) AS Año;
+    SQL SELECT id, fecha_hora, motivo_cita, paciente_id, medico_id FROM CitasMedicas.dbo.Cita;
+    STORE Cita INTO [$(vQVDPath)Cita.qvd] (qvd);
+ELSE
+    Cita:
+    LOAD * FROM [$(vQVDPath)Cita.qvd] (qvd);
+ENDIF;
+
+// Cargar la tabla Diagnostico
+IF NOT FileSize(vQVDPath & 'Diagnostico.qvd') THEN
+    OLEDB CONNECT TO [Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CitasMedicas;Data Source=localhost\SQLEXPRESS01];
+    Diagnostico:
+    LOAD 
+        id AS diagnostico_id,
+        valoracion_especialista,
+        enfermedad,
+        cita_id;
+    SQL SELECT id, valoracion_especialista, enfermedad, cita_id FROM CitasMedicas.dbo.Diagnostico;
+    STORE Diagnostico INTO [$(vQVDPath)Diagnostico.qvd] (qvd);
+ELSE
+    Diagnostico:
+    LOAD * FROM [$(vQVDPath)Diagnostico.qvd] (qvd);
+ENDIF;
